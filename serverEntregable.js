@@ -1,35 +1,26 @@
 const express = require("express");
-const fs = require('fs')
-
-const app = express();
+const Contenedor = require('./contenedor')
 
 const DBfile = 'productos.json'
+const app = express();
+const contenedor = new Contenedor(DBfile)
 
 const PORT = process.env.PORT || 8080;
 
-app.get("/productos", (request, response) => {
- const data = JSON.parce(fs.readFileSync(DBfile, 'utf-8'))
-
+app.get('/productos', (request, response) => {
+ const data = contenedor.getAll()
  response.json(data)
 }); 
-app.get("/", (request, response) => {
-    response.send(
-      "<h1 style='color: blue'>Bienvenidos a la clase de servidores</h1>"
-    );
-  });
+app.get('/productosRandom', (request, response) => {
+ const data = contenedor.getAll()
+ const numero = Math.floor(Math.random() * data.length)
+ const item = data[numero]
+ response.json(item)
+}); 
 
-let count = 0;
-app.get("/visitas", (request, response) => {
-  count++;
-  response.send("La cantidad de visitas es: " + count);
-});
+app.listen(8080)
 
-app.get("/fyh", (request, response) => {
-  let fyh = new Date();
-  response.send({ fyh: "La fecha y hora actual es: " + fyh.toLocaleString() });
-});
-
-const server = app.listen(PORT, () => {
+/* const server = app.listen(PORT, () => {
   console.log(`Server http on ${PORT} ......`);
 });
-server.on("error", (error) => console.log("Error on server", error));
+server.on("error", (error) => console.log("Error on server", error)); */
