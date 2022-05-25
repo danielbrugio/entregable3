@@ -2,10 +2,10 @@
   "name": "entregable3",
   "version": "1.0.0",
   "description": "",
-  "main": "serverEjercicio.js",
+  "main": "serverEntregable.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node serverEjercicio.js"
+    "start": "node serverEntregable.js"
   },
   "repository": {
     "type": "git",
