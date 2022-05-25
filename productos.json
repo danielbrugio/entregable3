@@ -1,0 +1,5 @@
+[
+    {"id": 1, "name": "Galaxy S22 Ultra", "price":150000},
+    {"id": 2, "name": "Galaxy A23", "price":120000},
+    {"id": 3, "name": "Galaxy A13", "price":90000}
+]

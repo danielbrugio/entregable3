@@ -1,13 +1,16 @@
 const express = require("express");
+const fs = require('fs')
 
 const app = express();
 
+const DBfile = 'productos.json'
+
 const PORT = process.env.PORT || 8080;
 
-app.get("/", (request, response) => {
-  response.send(
-    "<h1 style='color: blue'>Bienvenidos a la clase de servidores</h1>"
-  );
+app.get("/productos", (request, response) => {
+ const data = JSON.parce(fs.readFileSync(DBfile))
+
+ response.json(data)
 });
 
 let count = 0;
