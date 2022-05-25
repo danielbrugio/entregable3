@@ -18,9 +18,9 @@ app.get('/productosRandom', (request, response) => {
  response.json(item)
 }); 
 
-app.listen(8080)
+//app.listen(8080)
 
-/* const server = app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server http on ${PORT} ......`);
 });
-server.on("error", (error) => console.log("Error on server", error)); */
+server.on("error", (error) => console.log("Error on server", error));
