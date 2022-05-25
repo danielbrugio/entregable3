@@ -7,17 +7,17 @@ const DBfile = 'productos.json'
 
 const PORT = process.env.PORT || 8080;
 
-/* app.get("/productos", (request, response) => {
- const data = JSON.parce(fs.readFileSync(DBfile))
+app.get("/productos", (request, response) => {
+ const data = JSON.parce(fs.readFileSync(DBfile, 'utf-8'))
 
  response.json(data)
-}); */
+}); 
 app.get("/", (request, response) => {
     response.send(
       "<h1 style='color: blue'>Bienvenidos a la clase de servidores</h1>"
     );
   });
-  
+
 let count = 0;
 app.get("/visitas", (request, response) => {
   count++;
