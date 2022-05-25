@@ -1,7 +1,7 @@
 const express = require("express");
 const Contenedor = require('./contenedor')
 
-const DBfile = 'productos.json'
+const DBfile = 'productos.txt'
 const app = express();
 const contenedor = new Contenedor(DBfile)
 
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080;
 
 app.get("/", (request, response) => {
     response.send(
-      "<h1 style='color: blue'>Hola! Agrega en la url /productos para acceder al listado completo de Productos o /productosRandom para que te muestra un producto al azar</h1>"
+      "<h1 style='color: black'>Hola! Aquí no hay nada! Para acceder a los datos hace lo siguiente:</h1> \n <h2>1) Agregá en la url /productos para acceder al listado completo de Productos</h2> \n <h2>2) Agregá /productosRandom para que te muestra un producto al azar</h2>"
     );
   });
 
